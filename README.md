@@ -43,7 +43,7 @@ The rejected files, each compiled as a module of the core:
 - `ffi.rs`: without `std`, the clock is still one C call away (`time()` from libc).
   ``usage of an `unsafe extern` block``: `#![forbid(unsafe_code)]` closes that door.
 
-One caveat the article glosses over: **an empty dependency list isn't enough on its own.**
+One caveat the first version of the article glossed over, corrected on 2026-10-30 because of this repo: **an empty dependency list isn't enough on its own.**
 Rust's standard library comes with `std::fs`, `std::net` and `std::time`, so a core with no
 dependencies can still read files, open sockets and look at the clock. `check.sh` shows it:
 remove `#![no_std]` and `files.rs` compiles. What closes the door is the combination: no
