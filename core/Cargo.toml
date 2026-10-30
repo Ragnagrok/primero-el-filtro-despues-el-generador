@@ -1,0 +1,12 @@
+[package]
+name = "giftcard-core"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+description = "The pure core: a gift card code's lifecycle, with no I/O"
+
+# No [dependencies] on purpose: this list is the purity check.
+# core-gate.sh fails if anything shows up here.
+
+[dev-dependencies]
+proptest = "1"
